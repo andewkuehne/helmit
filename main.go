@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
 
 	charts "github.com/andrewkuehne/helmit/charts"
 	k8stesting "github.com/andrewkuehne/helmit/k8s/k8stesting"
@@ -20,6 +21,11 @@ Flags:
   -t, --test                  Test the Helm chart after loading`
 
 func main() {
+	// Check if Helm is installed
+	if err := exec.Command("helm", "version").Run(); err != nil {
+		log.Fatal("Error: Helm is not installed on this system")
+	}
+
 	// Command line flags
 	chartPath := flag.String("chart", "", "Path to the Helm chart")
 	helpFlag := flag.Bool("help", false, "Output usage information")
