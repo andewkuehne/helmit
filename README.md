@@ -2,6 +2,11 @@
 
 Helmit is a tool for validating, linting, and testing Helm charts. It provides a simple command-line interface for loading charts and running tests.
 
+## Requirements
+
+Helm  must be installed in your environment to use Helmit.
+Please make sure to install the appropriate version of Helm before using Helmit. You can find more information about how to install Helm in the [official Helm documentation](https://helm.sh/docs/intro/install/).
+
 ## Usage
 
 To validate and lint a chart:
